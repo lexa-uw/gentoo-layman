@@ -1,4 +1,4 @@
-EAPI=2
+EAPI=4
 
 PHP_EXT_NAME="proctitle"
 PHP_EXT_INI="yes"
