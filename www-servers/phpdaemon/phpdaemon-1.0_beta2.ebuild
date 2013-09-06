@@ -59,9 +59,6 @@ src_install() {
 	insinto /etc/logrotate.d
 	doins conf/phpd_rotate || die
 
-	insinto /etc/phpd/${SLOT}
-	doins conf/phpd.conf.example || die
-
 	insinto /etc/phpd/${SLOT}/conf.d
 	doins conf/conf.d/*.conf || die
 
