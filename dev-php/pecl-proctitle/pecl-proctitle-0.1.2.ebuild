@@ -1,32 +1,18 @@
 EAPI=4
-
 PHP_EXT_NAME="proctitle"
-PHP_EXT_PECL_PKG="PROCTITLE"
 PHP_EXT_INI="yes"
 PHP_EXT_ZENDEXT="no"
 
-S="${WORKDIR}/proctitle-${PV}"
+USE_PHP="php5-2 php5-3 php5-4 php5-5"
 
-KEYWORDS="x86 amd64"
+inherit php-ext-pecl-r2
 
-inherit php-ext-source-r2 confutils
+KEYWORDS="~amd64 ~x86"
 
-DESCRIPTION="PHP proctitle extension."
+DESCRIPTION="This extension allows changing the current process' name on Linux and *BSD systems. This is useful when using pcntl_fork() to identify running processes in process list."
+LICENSE="PHP-3"
 SLOT="0"
 IUSE=""
 
 DEPEND=">=dev-lang/php-5.2.0"
 RDEPEND="${DEPEND}"
-
-HOMEPAGE="http://pecl.php.net/package/proctitle"
-SRC_URI="http://pecl.php.net/get/proctitle-${PV}.tgz"
-
-src_compile() {
-	my_conf="--enable-proctitle"
-
-	php-ext-source-r2_src_compile
-}
-
-src_install() {
-	php-ext-source-r2_src_install
-}
