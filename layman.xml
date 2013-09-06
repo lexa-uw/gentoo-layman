@@ -3,10 +3,10 @@
   <repo quality="experimental" status="unofficial">
     <name><![CDATA[phpdaemon]]></name>
     <description><![CDATA[PHPDaemon overlay]]></description>
-    <homepage>http://github.com/kakserpom/phpdaemon</homepage>
+    <homepage>https://github.com/lexa-uw/layman-phpdaemon.git</homepage>
     <owner>
-      <email>igor.kalashnikov@gmail.com</email>
+      <email>odin450@gmail.com</email>
     </owner>
-    <source type="git">git://github.com/silentroach/layman-phpdaemon.git</source>
+    <source type="git">https://github.com/lexa-uw/layman-phpdaemon.git</source>
   </repo>
 </repositories>
