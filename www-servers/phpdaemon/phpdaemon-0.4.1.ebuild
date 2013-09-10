@@ -10,7 +10,7 @@ IUSE="examples +libevent runkit"
 
 DEPEND="
 	>=app-admin/eselect-phpdaemon-0.1
-	>=dev-lang/php-5.2[cli,ctype,json,pcntl,posix,sockets,sharedmem]
+	>=dev-lang/php-5.3:5.3
 	libevent? ( =dev-php/pecl-libevent-0.0.4 )
 	runkit? ( >=dev-php/runkit-1.0.1 )
 "
@@ -30,6 +30,7 @@ src_unpack() {
 	cd "${S}"
 
 	mv conf/logrotate conf/phpd_rotate
+	sed -i -e "s/\/usr\/bin\/php/\/usr\/bin\/php5.3/" bin/phpd || die "Sed filed!"
 }
 
 src_install() {
@@ -80,5 +81,10 @@ src_install() {
 	doins conf/conf.d/*.conf || die
 
 	dosym ${BASE}/bin/phpd /usr/bin/phpd${SLOT}
+
+	cp ${FILESDIR}/init.d/phpd phpd
+	insinto /etc/init.d/
+	doins phpd
+	fperms +x /etc/init.d/phpd
 }
 

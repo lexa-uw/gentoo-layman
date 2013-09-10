@@ -66,5 +66,10 @@ src_install() {
 	doins conf/conf.d/*.conf || die
 
 	dosym ${BASE}/bin/phpd /usr/bin/phpd${SLOT}
+
+	cp ${FILESDIR}/init.d/phpd phpd
+	insinto /etc/init.d/
+	doins phpd
+	fperms +x /etc/init.d/phpd
 }
 
