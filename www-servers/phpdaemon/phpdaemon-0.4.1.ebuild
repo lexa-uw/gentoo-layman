@@ -9,6 +9,7 @@ SLOT="0.4"
 IUSE="examples +libevent runkit"
 
 DEPEND="
+	>=app-admin/eselect-phpdaemon-0.1
 	>=dev-lang/php-5.2[cli,ctype,json,pcntl,posix,sockets,sharedmem]
 	libevent? ( =dev-php/pecl-libevent-0.0.4 )
 	runkit? ( >=dev-php/runkit-1.0.1 )

@@ -9,6 +9,7 @@ SLOT="1.0"
 IUSE="+eio +event runkit"
 
 DEPEND="
+	>=app-admin/eselect-phpdaemon-0.1
 	>=dev-lang/php-5.4[cli,ctype,json,pcntl,posix,sockets,sharedmem]
 	eio? ( >=dev-php/pecl-eio-1.2.1 )
 	event? ( >=dev-php/pecl-event-1.6.0 )
